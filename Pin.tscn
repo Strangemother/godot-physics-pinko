@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.25
+height = 1.1
+
+[node name="Scene Root" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="RigidBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/RigidBody"]
+shape = SubResource( 2 )
